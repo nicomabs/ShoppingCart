@@ -3,6 +3,9 @@ body{
   margin: auto;
   font-size: 22px;
 };
+h1, h2 {
+  font-family:'Trade Winds', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
 table {
     font-family: arial, sans-serif;
