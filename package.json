@@ -1,0 +1,26 @@
+{
+  "name": "nicommerce",
+  "version": "1.0.0",
+  "description": "e-commerce project simplon",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicomabs/ShoppingCart.git"
+  },
+  "author": "batman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicomabs/ShoppingCart/issues"
+  },
+  "homepage": "https://github.com/nicomabs/ShoppingCart#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
