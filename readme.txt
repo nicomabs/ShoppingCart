@@ -1,2 +1,10 @@
-1 - Créer une classe Produit
-2 - Afficher la liste des produits dans le html
+Projet E-Commerce
+
+// Pour installer :
+
+git clone
+npm install 
+
+//Lancement serveur : 
+
+
