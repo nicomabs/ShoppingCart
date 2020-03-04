@@ -5,4 +5,7 @@ module.exports = app => {
     // Create a new Product
     app.post("/products", products.create);
 
+    // Retrieve all Customers
+    app.get("/products/read", products.findAll);
+
 }

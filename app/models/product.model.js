@@ -28,4 +28,17 @@ Product.create = (newProduct, result) => {
     });
   };
 
+Product.getAll = result => {
+  sql.query("SELECT * FROM T_Products", (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+      return;
+    }
+
+    console.log("products: ", res);
+    result(null, res);
+  });
+};
+
   module.exports = Product;
