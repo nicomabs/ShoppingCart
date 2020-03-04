@@ -24,6 +24,9 @@ app.get('/about', (req,res) => {
   res.send('ABOUT PAGE');
 });
 
+require("./app/routes/product.routes.js")(app);
+
 // Start listening server
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
+
