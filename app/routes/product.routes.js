@@ -4,4 +4,5 @@ module.exports = app => {
   
     // Create a new Product
     app.post("/products", products.create);
-};
+
+}
