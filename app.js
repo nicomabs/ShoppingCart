@@ -1,10 +1,11 @@
 const express = require('express');
+const bodyParser = require("body-parser");
 
 const app = express();
 
 const port = process.env.port || 3030;
 
-const bodyParser = require("body-parser");
+
 
 // parse requests of content-type: application/json
 app.use(bodyParser.json());
@@ -12,16 +13,14 @@ app.use(bodyParser.json());
 // parse requests of content-type: application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Controler
-
 // ROUTES
 
 app.get('/', (req,res) => {
-  res.send('HOMEPAGE');
+  res.json({ message : "Bienvenue sur Nicommerce" });
 });
 
 app.get('/about', (req,res) => {
-  res.send('ABOUT PAGE');
+  res.json('ABOUT PAGE');
 });
 
 require("./app/routes/product.routes.js")(app);
