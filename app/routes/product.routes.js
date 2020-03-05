@@ -5,10 +5,20 @@ module.exports = app => {
     // Create a new Product
     app.post("/products", products.create);
 
-    // Retrieve all Customers
-    app.get("/products/read", products.findAll);
+    // Retrieve all Products
+    app.get("/products/", products.findAll);
 
-    // Retrieve a single Customer with customerId
+    // Retrieve a single Product with productId
     app.get("/products/:productId", products.findOne);
+
+      // Update a Product with productId
+    app.put("/products/:productId", products.update);
+
+    // Delete a product with productId
+    app.delete("/products/:productId", products.delete);
+
+    // Create a new product
+    app.delete("/products", products.deleteAll);
+    
 
 };

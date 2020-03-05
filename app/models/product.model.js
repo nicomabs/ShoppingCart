@@ -55,8 +55,63 @@ Product.findById = (productId, result) => {
       return;
     }
 
-    // not found Customer with the id
+    // not found product with the id
     result({ kind: "not_found" }, null);
+  });
+};
+
+Product.updateById = (id, product, result) => {
+  sql.query(
+    "UPDATE T_Products SET name = ?, brand = ?, price = ?, quantity = ?, id_category = ? WHERE id = ?",
+    [product.name, product.brand, product.price, product.quantity, product.id_category, id],
+    (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(null, err);
+        return;
+      }
+
+      if (res.affectedRows == 0) {
+        // not found Product with the id
+        result({ kind: "not_found" }, null);
+        return;
+      }
+
+      console.log("updated product: ", { id: id, ...product });
+      result(null, { id: id, ...product });
+    }
+  );
+};
+
+Product.remove = (id, result) => {
+  sql.query("DELETE FROM T_Products WHERE id = ?", id, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+      return;
+    }
+
+    if (res.affectedRows == 0) {
+      // not found product with the id
+      result({ kind: "not_found" }, null);
+      return;
+    }
+
+    console.log("deleted product with id: ", id);
+    result(null, res);
+  });
+};
+
+Product.removeAll = result => {
+  sql.query("DELETE FROM T_Products", (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+      return;
+    }
+
+    console.log(`deleted ${res.affectedRows} products`);
+    result(null, res);
   });
 };
 
