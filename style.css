@@ -3,7 +3,8 @@ html {
 }
 
 body {
-  margin: 0;
+  max-width: 600px;
+  margin: auto;
 }
 
 button {
@@ -52,4 +53,42 @@ th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+/* Styling the products */
+
+main {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+section {
+  width: 45%;
+  margin: 5px;
+  background-color: black;
+  position: relative;
+  height: 215px;
+}
+
+section img {
+  width: 100%;
+  display: block;
+  position: absolute;
+  bottom: 0px;
+}
+
+section p {
+  color: yellow;
+  background: black;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 2px 2px 1px yellow;
+  position: absolute;
+  right: 10px;
+  bottom: -6px;
+  z-index: 2000;
 }

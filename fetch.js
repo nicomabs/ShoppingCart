@@ -57,10 +57,10 @@ const getData = () => {
 
 const sendData = () => {
     sendHttpRequest('POST', 'http://localhost:3030/products', {
-            name: "HP Pavillion 15",
-            brand: "Hewlett Packard",
-            price: 569,
-            quantity: 2,
+            name: "?",
+            brand: "?",
+            price: 0,
+            quantity: 0,
             id_category: 1
         })
         .then(responseData => {
@@ -71,5 +71,6 @@ const sendData = () => {
         });
 };
 
-getBtn.addEventListener('click', getData);
-postBtn.addEventListener('click', sendData);
+getData();
+//getBtn.addEventListener('click', getData);
+//postBtn.addEventListener('click', sendData);
